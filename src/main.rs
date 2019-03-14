@@ -16,6 +16,10 @@ fn main() {
                          .content(get_load())
                          .with_id("txt_view"))).button("Quit", |q| q.quit()));
 
+    /*
+     * This was my first attempt at an updater thread for the UI
+     * Does not build... because I've got lots to learn
+     *
     thread::spawn(move || {
         let two_sec = time::Duration::from_secs(2);
 
@@ -25,7 +29,7 @@ fn main() {
             thread::sleep(two_sec);
         }
     });
-
+    */
 
     app.run();
 }
