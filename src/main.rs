@@ -16,8 +16,8 @@ fn main() {
                          .content(get_load())
                          .with_id("txt_view"))).button("Quit", |q| q.quit()));
 
-    app.add_global_callback('u', |q| {
-        q.call_on_id("txt_view", |view: &mut TextView| {
+    app.add_global_callback('u', |u| {
+        u.call_on_id("txt_view", |view: &mut TextView| {
             view.set_content(get_load());
         });
     });
