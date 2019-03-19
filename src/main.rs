@@ -51,7 +51,7 @@ fn get_load_avg(tx: &mpsc::Sender<String>, cb_sink: cursive::CbSink){
         cb_sink.send(Box::new(Cursive::noop)).unwrap();
 
         // wait 5 seconds before getting new data
-        thread::sleep(Duration::from_secs(5));
+        thread::sleep(Duration::from_secs(2));
     }
 }
 
@@ -103,7 +103,7 @@ fn get_load() -> String {
     let load_avg = loadavg();
     match load_avg {
         Ok(avg) => {
-            format!("Load Average: {}, {}, {}", 
+            format!("{}, {}, {}", 
                     avg.load_avg_1_min,
                     avg.load_avg_5_min,
                     avg.load_avg_10_min)
