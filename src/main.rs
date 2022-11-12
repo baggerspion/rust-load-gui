@@ -103,7 +103,7 @@ fn get_load() -> String {
     let load_avg = loadavg();
     match load_avg {
         Ok(avg) => {
-            format!("{}, {}, {}", 
+            format!("{:.2}, {:.2}, {:.2}", 
                     avg.load_avg_1_min,
                     avg.load_avg_5_min,
                     avg.load_avg_10_min)
